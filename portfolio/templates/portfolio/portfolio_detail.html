@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+portfolio : {{ object.slug }}
+{% endblock %}
+{% block content %}
+{% include 'portfolio/_header.html' %}
+
+<section class="bg-light page-section" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-6 portfolio-item">
+                        <div class="text-center">
+                            <img src="{{ object.photo.url }}" class="img-fluid img-thumbnail">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-responsive portfolio-item">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" colspan="3">{{ object.title }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">Project</th>
+                                <td colspan="2">{{ object.sub_title }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Period</th>
+                                <td colspan="2">{{ object.dates }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Language</th>
+                                <td colspan="2">{{ object.lang }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Code</th>
+                                <td colspan="2"><a href="{{ object.github_url }}">{{ object.github_url }}</a></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">
+                                    {{ object.content }}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr style="margin-bottom:55px;">
+                <div class="row">
+                    <div class="col">
+                        <div id="player" class="embed-responsive">
+                        </div>
+                        <hr style="margin-top: 50px; margin-bottom:55px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-outline-light text-danger">BACK</a>
+        </div>
+    </div>
+</section>
+<script>
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            width: '600',
+            height: '400',
+            videoId: '{{ object.key }}'
+        });
+    }
+</script>
+{% include 'portfolio/_footer.html' %}
+{% endblock %}

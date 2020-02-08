@@ -1,0 +1,61 @@
+{% load static %}
+<!-- about section -->
+<section id="about" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center" id="about-text">
+                <h2 class="section-heading text-uppercase">About</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id=" AboutData">
+                    <div class="card shadow">
+                        <!-- card-title -->
+                        <div class="card-title about-card-title">
+                            <div class="media my-5">
+                                <img src="{% static 'image/kjh.jpg' %}" alt="" width="150" height="150"
+                                     class="img-fluid rounded-top mx-5 d-none d-lg-block" />
+                                <!-- media body-->
+                                <div class="media-body">
+                                    <h3 class="display-5 ml-4">I'm Kim JiHun.</h3>
+                                    <p class="text-muted ml-4">Developer & Designer</p>
+                                    <div class="container">
+                                        <table class="table table-responsive">
+                                            <tr>
+                                                <td>Age</td>
+                                                <td>:</td>
+                                                <td>1983.09.15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>:</td>
+                                                <td>kimzodlab@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone</td>
+                                                <td>:</td>
+                                                <td>+82&nbsp;10&nbsp;2697&nbsp;4836</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- end body -->
+                            </div>
+                        </div>
+                        <!-- //end card-title -->
+
+                        <!-- card-footer -->
+                        <div class="card-footer bg-danger">
+                            <a href="https://github.com/kimzod"><i class="fa fa-github fa-2x mx-4"></i></a>
+                            <a href="#"><i class="fa fa-youtube fa-2x mx-4"></i></a>
+                            <a href="#"><i class="fa fa-file fa-2x mx-4"></i></a>
+                        </div>
+
+                        <!-- //end card-footer -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
